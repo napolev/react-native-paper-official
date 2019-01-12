@@ -14,3 +14,9 @@ export default class Index extends React.Component<{}> {
     return <Home />;
   }
 }
+
+export const meta = {
+  title: 'Home',
+  description: 'Material design for React Native',
+  permalink: 'index',
+};

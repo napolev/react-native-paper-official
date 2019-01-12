@@ -91,7 +91,11 @@ function getPages() {
     .filter(file => file.includes('.'))
     .map(file => ({
       file: path.join(__dirname, 'pages', file),
-      type: file.endsWith('.js') ? 'custom' : 'markdown',
+      type: file.endsWith('.js')
+        ? 'custom'
+        : file.endsWith('.mdx')
+          ? 'mdx'
+          : 'md',
     }));
 
   return [...docs, { type: 'separator' }, ...components];
